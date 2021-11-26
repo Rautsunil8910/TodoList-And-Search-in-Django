@@ -1,0 +1,44 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+    <div>
+        <h1 style="background-color: red; text-align:center; ">TodoAddSearch</h1>
+
+        <p style="background-color: yellow;text-align:center" >concept of todo item add ,update delete and search functionality</p>
+        <hr>
+    </div>
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}
+        
+        <input type="text" name="content" placeholder="product name..." required>
+        <input type="text" name="desc" id="" placeholder="product desc..." required>
+        <input type="submit" name="" id="" value="add">
+        
+    </form>
+    <br>
+    <div><a href="{% url 'search'  %}">Go for search</a></div>
+    </div>
+    <br>
+    <div>
+        <table>
+           
+            <tr>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+            {% for data in product %}
+            <tr>
+   
+                <td>{{data.name}}</td>
+                <td>{{data.description}}</td>
+                <td><a href="update/{{data.id}}">update</a> / <a href="delete/{{data.id}}">delete</a></td>
+               
+            </tr>
+            {% endfor  %}
+           
+        </table>
+    </div>
+        
+
+ {% endblock %}

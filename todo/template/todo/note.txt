@@ -1,0 +1,7 @@
+This is simple todo like project
+In this project  i tried to add data to database  sqlite as a default database it can be changed
+This simple django project demostrate the concept of add update delete functionality.
+One more functionality is search functionality  which request the server and server makes query to database and response back to browser 
+#project name:- todoSearch
+#app name:- todo
+#Code by Sunil Raut

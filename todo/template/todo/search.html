@@ -1,0 +1,36 @@
+{% extends 'todo/base.html' %}
+{% block content %}
+    <div>
+        <h1 style="background-color: red; text-align:center; ">TodoAddSearch</h1>
+
+        <p style="background-color: yellow;text-align:center" >concept of todo item add ,update delete and search functionality</p>
+        <hr>
+    </div>
+    <div>
+        <form action="{% url 'search'  %}" method="GET">
+        
+         <input type="search" name="search" placeholder=" search by product name...">
+        <input type="submit" value="search">
+    </form>
+    <br>
+    <div>
+        <a href="{% url 'home' %}">Home Page</a>
+    </div>
+    </div>
+    <h1>Search data:</h1>
+    <br>
+    <div>
+        {% for res in results %}
+       <h1>  Name:  {{res.name}}</h1>
+       <h1> Description: {{res.description}}</h1>
+      
+        {% endfor  %}
+    </div>    
+    <div>
+        {% for message in messages %}
+
+        <script>alert("{{message}}")</script>
+        {% endfor %}
+    </div>   
+
+ {% endblock %}
